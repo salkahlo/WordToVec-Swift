@@ -35,7 +35,7 @@ public class NeuralNetwork{
         self.__vocabulary = Vocabulary(corpus: corpus)
         self.__parameter = parameter
         self.__corpus = corpus
-        self.__wordVectors = Matrix(row: self.__vocabulary.size(), col: self.__parameter.getLayerSize(), min: -0.5, max: 0.5)
+        self.__wordVectors = Matrix(row: self.__vocabulary.size(), col: self.__parameter.getLayerSize(), min: -0.5, max: 0.5, new Random(parameter.getSeed()))
         self.__wordVectorUpdate = Matrix(row: self.__vocabulary.size(), col: self.__parameter.getLayerSize())
         self.__prepareExpTable()
     }
